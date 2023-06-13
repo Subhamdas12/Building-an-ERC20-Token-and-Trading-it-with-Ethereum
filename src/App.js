@@ -1,23 +1,45 @@
-import logo from './logo.svg';
-import './App.css';
-
+import { useDispatch } from "react-redux";
+import "./App.css";
+import { useEffect } from "react";
+import {
+  loadAccount,
+  loadExchange,
+  loadNetwork,
+  loadProvider,
+  loadToken,
+  subscribeToEvent,
+} from "./Store/Interactions";
+import Body from "./Components/Body/Body";
+import config from "./config.json";
+import Alert from "./Components/Alert/Alert";
 function App() {
+  const dispatch = useDispatch();
+  const loadBlockchainData = async () => {
+    const provider = loadProvider(dispatch);
+    const chainId = await loadNetwork(provider, dispatch);
+    window.ethereum.on("accountsChanged", () => {
+      loadAccount(provider, dispatch);
+    });
+    window.ethereum.on("chainChanged", () => {
+      window.location.reload();
+    });
+    const token_config = config[chainId].Token;
+    const token = await loadToken(provider, token_config.address, dispatch);
+    const exchange_config = config[chainId].Exchange;
+    const exchange = await loadExchange(
+      provider,
+      exchange_config.address,
+      dispatch
+    );
+    subscribeToEvent(token, dispatch);
+  };
+  useEffect(() => {
+    loadBlockchainData();
+  });
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Body />
+      <Alert />
     </div>
   );
 }

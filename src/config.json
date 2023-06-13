@@ -1,0 +1,20 @@
+{
+    "31337": {
+        "Token": {
+            "address": "0x5FbDB2315678afecb367f032d93F642f64180aa3"
+        },
+        "Exchange": {
+            "address": "0xe7f1725E7734CE288F8367e1Bb143E90bb3F0512"
+        },
+        "explorerURL": "#"
+    },
+    "11155111": {
+        "Token": {
+            "address": "0x949956b6b4b16DB5f45275BbCa01081C50F6Fc92"
+        },
+        "Exchange": {
+            "address": "0x4C1Cd53373b80E22BCb9127a3fDfe378F74714fA"
+        },
+        "explorerURL": "https://sepolia.etherscan.io/"
+    }
+}

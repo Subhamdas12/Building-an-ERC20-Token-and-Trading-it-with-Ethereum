@@ -1,0 +1,138 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: transparent;
+    font-family: Arial, sans-serif;
+  }
+  
+  .form-container {
+    background-color: transparent;
+    padding: 30px;
+    color: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); /* Updated box shadow */
+    max-width: 400px;
+    margin: 30px auto;
+    background-color: rgba(0, 0, 0, 0.25); 
+    background-blend-mode: multiply; 
+    backdrop-filter: blur(4px);
+  }
+  
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    color: white;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    font-weight: bold;
+  }
+  
+  .navbar .connect-button {
+    background-color: "#fa2287";
+    color: white;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+    text-decoration: none;
+  }
+  
+  .navbar .connect-button:hover {
+    opacity: 0.8;
+  }
+  
+  .navbar .network-select {
+    background-color: #fa2287;
+    color: white;
+    border: none;
+    padding: 8px;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  .form-container h2 {
+    margin-top: 0;
+    font-size: 24px;
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  
+  .form-container label {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 16px;
+    font-weight: bold;
+  }
+  
+  .form-container input[type="number"],
+  .form-container textarea {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    transition: border-color 0.3s ease;
+  }
+  
+  .form-container input[type="number"]:focus,
+  .form-container textarea:focus {
+    border-color: #fa2287;
+  }
+  
+  .form-container button {
+    background-color: #fa2287;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .form-container button:hover {
+    background-color: #d41d76;
+  }
+  
+  /* Hover effects */
+  .form-container button:hover,
+  .navbar .network-select:hover {
+    opacity: 0.8;
+  }
+  
+  .form-container input[type="number"]:hover,
+  .form-container textarea:hover {
+    border-color: #d41d76;
+  }
+
+  .tabs {
+    
+    border-radius: 10px;
+    padding: 0.20em;
+    margin-bottom: 1rem;
+  }
+  
+  .tabs .tab {
+    background: transparent;
+    min-width: 6em;
+    padding: 0.50em 0.75em;
+    border: none;
+    border-radius: 8px;
+    font-family: "DM Sans";
+    font-weight: 500;
+    cursor: pointer;
+    position: relative;
+  }
+  
+  .tabs .tab--active {
+    background: #fa2287;
+  }
+  .details{
+    height: 4rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
